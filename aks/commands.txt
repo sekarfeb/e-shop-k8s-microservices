@@ -76,6 +76,15 @@ az acr repository show-tags --name shoppingacr --repository shoppingclient --out
 Result
 v1
 --
+
+**Register the Resource Provider**:
+
+   To register the `Microsoft.Network` resource provider (which includes Public IP Addresses), you can use the following Azure CLI command:
+
+   ```bash
+   az provider register --namespace Microsoft.Network
+   ```
+
 Create AKS cluster with attaching ACR
 az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 1 --generate-ssh-keys --attach-acr shoppingacr
 
