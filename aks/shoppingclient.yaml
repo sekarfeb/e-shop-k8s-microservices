@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: shoppingclient
-          image: shoppingacr.azurecr.io/shoppingclient:v2
+          image: sekarshoppingacr.azurecr.io/shoppingclient:v1
           imagePullPolicy: IfNotPresent          
           ports:
             - containerPort: 80
@@ -28,15 +28,7 @@ spec:
                   configMapKeyRef:
                     name: shoppingapi-configmap
                     key: shoppingapi_url
-          resources:
-            requests:
-              memory: "64Mi"
-              cpu: "0.1"
-            limits:
-              memory: "128Mi"
-              cpu: "0.3"
-      imagePullSecrets:
-        - name: acr-secret
+
 ---
 apiVersion: v1
 kind: Service
